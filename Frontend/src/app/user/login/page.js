@@ -8,12 +8,23 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Mock login logic, replace with real authentication
-    if (email === 'user@example.com' && password === 'password') {
-      // On success, redirect to another page
-      router.push('/dashboard');
+    // const formData = new FormData();
+    // formData.append('email', email);
+    // formData.append('password', password);
+    const response = await fetch('http://localhost:8000/api/v1/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({ "email" : email,"password" : password }),
+    });
+    const data = await response.json();
+    if (data.statusCode === 200) {
+      router.push('/user/channel');
+      alert('Logged in successfully');
     } else {
       alert('Invalid credentials');
     }
@@ -26,7 +37,7 @@ export default function Login() {
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
           <div className="rounded-md shadow-sm">
             <div className="mb-4">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-gray-700">
                 Email address
               </label>
               <input
@@ -40,7 +51,7 @@ export default function Login() {
               />
             </div>
             <div className="mb-6">
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+              <label className="block text-sm font-medium text-gray-700">
                 Password
               </label>
               <input
