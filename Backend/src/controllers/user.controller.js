@@ -122,7 +122,9 @@ const loginUser = asyncHandler(async (req, res) => {
         new ApiResponse(
             200,
             {
-                user : loggedInUser, accessToken , refreshToken
+                user : loggedInUser, 
+                accessToken , 
+                refreshToken
             },
             "User logged in successfully"
         )    
@@ -225,6 +227,7 @@ const changeCurrentPassword = asyncHandler(async (req , res) => {
 })
 
 const getCurrentUser = async (req , res) => {
+    console.log(req.user);
     return res.status(200).json(
         new ApiResponse(
             200,
@@ -303,7 +306,7 @@ const updateUserCoverImage = asyncHandler(async (req,res)=> {
     const user  = await User.findByIdAndUpdate(req.user?._id,
         {
             $set : {
-                coverimage : coverimage.url
+                coverImage : coverimage.url
             }
         },
         {new : true},
