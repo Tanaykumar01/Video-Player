@@ -1,11 +1,11 @@
 import Link from "next/link";
-
 const SideNavbar = () => {
     return (
-        <div className="side-navbar ml-5 w-[15vw] h-full bg-[#0f0f0f] text-white text-[17px] font-bold">
+        
+        <div className="side-navbar ml-5 w-[15vw] h-auto bg-[#0f0f0f] text-white text-[17px] font-bold overflow-y-scroll">
             {/* Section 1: Main Navigation */}
             <div className="pt-4">
-                <div className="py-3 px-4 hover:bg-[#383838] cursor-pointer">
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
                     <Link href="/">
                         <div  className="flex items-center space-x-4">
                             <span>🏠</span> {/* Icon placeholder */}
@@ -13,7 +13,7 @@ const SideNavbar = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="py-3 px-4 hover:bg-[#383838] cursor-pointer">
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
                     <Link href="/shorts">
                         <div className="flex items-center space-x-4">
                             <span>⚡</span> {/* Icon placeholder */}
@@ -21,7 +21,7 @@ const SideNavbar = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="py-3 px-4 hover:bg-[#383838] cursor-pointer">
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
                     <Link href="/subscriptions">
                         <div className="flex items-center space-x-4">
                             <span>📺</span> {/* Icon placeholder */}
@@ -36,7 +36,15 @@ const SideNavbar = () => {
 
             {/* Section 2: Library */}
             <div>
-                <div className="py-3 px-4 hover:bg-[#383838] cursor-pointer">
+            <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/user/channel">
+                        <div className="flex items-center space-x-4">
+                            {/* <span>👤</span> Icon placeholder */}
+                            <span>You --:</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
                     <Link href="/user/channel">
                         <div className="flex items-center space-x-4">
                             <span>👤</span> {/* Icon placeholder */}
@@ -44,7 +52,7 @@ const SideNavbar = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="py-3 px-4 hover:bg-[#383838] cursor-pointer">
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
                     <Link href="/history">
                         <div className="flex items-center space-x-4">
                             <span>🕒</span> {/* Icon placeholder */}
@@ -52,7 +60,7 @@ const SideNavbar = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="py-3 px-4 hover:bg-[#383838] cursor-pointer hidden">
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
                     <Link href="/playlist">
                         <div className="flex items-center space-x-4">
                             <span>🎶</span> {/* Icon placeholder */}
@@ -60,7 +68,7 @@ const SideNavbar = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="py-3 px-4 hover:bg-[#383838] cursor-pointer">
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
                     <Link href="/your-videos">
                         <div className="flex items-center space-x-4">
                             <span>🎥</span> {/* Icon placeholder */}
@@ -68,7 +76,7 @@ const SideNavbar = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="py-3 px-4 hover:bg-[#383838] cursor-pointer">
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
                     <Link href="/watch-later">
                         <div className="flex items-center space-x-4">
                             <span>⏳</span> {/* Icon placeholder */}
@@ -76,7 +84,7 @@ const SideNavbar = () => {
                         </div>
                     </Link>
                 </div>
-                <div className="py-3 px-4 hover:bg-[#383838] cursor-pointer">
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
                     <Link href="/liked-videos">
                         <div className="flex items-center space-x-4">
                             <span>👍</span> {/* Icon placeholder */}
@@ -85,7 +93,108 @@ const SideNavbar = () => {
                     </Link>
                 </div>
             </div>
-        </div>
+
+            {/* Divider */}
+            <div className="w-full h-[1px] bg-[#383838] my-2" />
+
+            {/* Section 3: Subscriptions */}
+            <div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    {/* <Link href="/user/channel"> */}
+                        <div className="flex items-center space-x-4">
+                            {/* <span>👤</span> Icon placeholder */}
+                            <span>Subscriptions</span>
+                        </div>
+                    {/* </Link> */}
+                </div>
+            </div>
+
+            {/* Divider */}
+            <div className="w-full h-[1px] bg-[#383838] my-2" />
+
+            {/* Section 4: More from YouTube */}
+            <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/user/channel">
+                        <div className="flex items-center space-x-4">
+                            {/* <span>👤</span> Icon placeholder */}
+                            <span>Explore</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/user/channel">
+                        <div className="flex items-center space-x-4">
+                            <span>👤</span> {/* Icon placeholder */}
+                            <span>Trending</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/history">
+                        <div className="flex items-center space-x-4">
+                            <span>🕒</span> {/* Icon placeholder */}
+                            <span>Shoping</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/playlist">
+                        <div className="flex items-center space-x-4">
+                            <span>🎶</span> {/* Icon placeholder */}
+                            <span>Music</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/your-videos">
+                        <div className="flex items-center space-x-4">
+                            <span>🎥</span> {/* Icon placeholder */}
+                            <span>Films</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/watch-later">
+                        <div className="flex items-center space-x-4">
+                            <span>⏳</span> {/* Icon placeholder */}
+                            <span>Live</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/liked-videos">
+                        <div className="flex items-center space-x-4">
+                            <span>👍</span> {/* Icon placeholder */}
+                            <span>Gaming</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/liked-videos">
+                        <div className="flex items-center space-x-4">
+                            <span>👍</span> {/* Icon placeholder */}
+                            <span>News</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/liked-videos">
+                        <div className="flex items-center space-x-4">
+                            <span>👍</span> {/* Icon placeholder */}
+                            <span>Sports</span>
+                        </div>
+                    </Link>
+                </div>
+                <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
+                    <Link href="/liked-videos">
+                        <div className="flex items-center space-x-4">
+                            <span>📝</span> {/* Icon placeholder */}
+                            <span>Courses</span>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+        // </div>
     );
 }
 
