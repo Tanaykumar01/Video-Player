@@ -1,7 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['res.cloudinary.com'],  // Add Cloudinary as an allowed domain
+      remotePatterns: [
+        {
+          protocol: 'http',
+          hostname: 'res.cloudinary.com',
+          pathname: '/**',
+        },
+      ],
+    },
+      webpack(config) {
+        config.module.rules.push({
+          test: /\.svg$/,
+          use: ['@svgr/webpack'],
+        });
+        return config;
       },
 };
 

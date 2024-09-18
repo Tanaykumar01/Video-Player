@@ -45,7 +45,7 @@ const SideNavbar = () => {
                     </Link>
                 </div>
                 <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
-                    <Link href="/user/channel">
+                    <Link href="/user/channel/home">
                         <div className="flex items-center space-x-4">
                             <span>👤</span> {/* Icon placeholder */}
                             <span>Your Channel</span>

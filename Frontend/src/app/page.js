@@ -1,11 +1,3 @@
-// const App = () => { 
-//   return (
-//     <div className="flex justify-between">
-//       routes
-//     </div>
-//   )
-// }
-// export default App;
 "use client";
 import React, { useEffect, useState } from 'react';
 import { checkUserLogin } from './api/auth'; // Import the function you wrote

@@ -1,10 +1,9 @@
 'use client';
 import Image from 'next/image';
-import avatar from '../../../../Assets/avatar.webp';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { checkUserLogin } from '@/app/api/auth';
-const channelPage = () => {
+const ChannelPage = () => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
@@ -24,7 +23,7 @@ const channelPage = () => {
     }
     return (
         <div className="channel-page h-full">
-            <div className='cover-image'>
+            <div className='cover-image hidden'>
                 <Image src={user.coverImage}
                     alt="cover"
                     width={1920}
@@ -55,14 +54,14 @@ const channelPage = () => {
                 </div>
             </div>
             <div className="flex space-x-14 ml-[5vw] text-xl mb-4">
-                <div className='hover:border-b-2'>Home</div>
-                <div>Playlist</div>
-                <div>Community</div>
+                <Link href="/user/channel/home" className='hover:border-b-2'>Home</Link>
+                <Link href="/user/channel/playlist" className='hover:border-b-2'>Playlist</Link>
+                <Link href="/user/channel/community" className='hover:border-b-2'>Community</Link>
             </div>
             {/* Divider */}
             <div className="w-full h-[1px] bg-[#383838] my-2" />
-            <div>Content</div>
+
         </div>
     );
 }
-export default channelPage;
+export default ChannelPage;
