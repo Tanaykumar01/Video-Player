@@ -2,7 +2,7 @@ import Link from "next/link";
 const SideNavbar = () => {
     return (
         
-        <div className="side-navbar ml-5 w-[15vw] h-auto bg-[#0f0f0f] text-white text-[17px] font-bold overflow-y-scroll">
+        <div className={`side-navbar ml-5 w-[15vw] h-[90vh] bg-[#0f0f0f] text-white text-[17px] font-bold overflow-y-scroll`}>
             {/* Section 1: Main Navigation */}
             <div className="pt-4">
                 <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">

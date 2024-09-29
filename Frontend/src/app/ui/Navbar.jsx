@@ -1,33 +1,30 @@
-// 'use client';
-// import { useState } from "react";
 import Search from "./Search";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 
 const Navbar = () => {
-    // const [togleSideNav , setTogleSideNav] = useState(false);
     return (
-        <div className="relative flex items-center justify-between px-4 py-2 m-5">
+        <div className="relative flex items-center justify-between px-6 py-4 bg-[#0f0f0f] border-b-2 border-[#383838]">
             {/* Start Section */}
-            <div className="flex items-center space-x-4 w-[15vw] border-gray-50">
-                <div className="cursor-pointer" >
-                    <HamburgerMenuIcon className="size-8" />
-                </div>
-                <div className="flex items-center space-x-2">
-                    <div>Icon</div>
-                    <div className="font-bold">Logo</div>
+            <div className="flex items-center space-x-6 w-[15vw]">
+                <button className="cursor-pointer hover:opacity-80 transition-opacity duration-200">
+                    <HamburgerMenuIcon className="w-6 h-6 text-white" />
+                </button>
+                <div className="flex items-center space-x-3">
+                    <div className="text-white">Icon</div>
+                    <div className="text-xl font-bold text-white">Logo</div>
                 </div>
             </div>
 
             {/* Center Section */}
-            <div className="mx-5">
-                <Search placeholder={'search'} />
+            <div className="flex-1 max-w-lg mx-10">
+                <Search placeholder={'Search...'} />
             </div>
 
             {/* End Section */}
-            <div className="flex justify-center items-center space-x-4">
-                <div className="">create</div>
-                <div className="">notification</div>
-                <div className="">channel</div>
+            <div className="flex items-center space-x-6">
+                <div className="text-white hover:text-gray-300 cursor-pointer transition-colors duration-200">Create</div>
+                <div className="text-white hover:text-gray-300 cursor-pointer transition-colors duration-200">Notification</div>
+                <div className="text-white hover:text-gray-300 cursor-pointer transition-colors duration-200">Channel</div>
             </div>
         </div>
     );

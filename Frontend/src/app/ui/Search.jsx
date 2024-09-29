@@ -10,7 +10,7 @@ export default function Search({ placeholder }) {
         className="w-full px-4 py-2 text-lg text-gray-700 placeholder-gray-400 bg-white border border-gray-300 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
         placeholder={placeholder}
       />
-      <button className="absolute text-gray-700 px-4 bg-purple-600 h-[50px] rounded-r-2xl">
+      <button className="absolute text-gray-700 px-4 bg-[#383838] h-[50px] rounded-r-2xl">
       🔍
       </button>
     </div>
