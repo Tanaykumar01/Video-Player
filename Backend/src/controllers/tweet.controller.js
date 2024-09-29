@@ -8,7 +8,21 @@ import {asyncHandler} from "../utils/asyncHandler.js"
 const createTweet = asyncHandler(async (req, res) => {
     //TODO: create tweet
     const message = req.body;
-
+    const { _id } = req.user;
+    const user = await User.findById(_id);
+    if (!user) {
+        throw new ApiError(404, "User not found");
+    }
+    const tweet = await Tweet.create({
+        message,
+        owner: _id
+    });
+    return res.status(201).json(
+        new ApiResponse(201,
+            tweet,
+            "Tweet created successfully"
+        )
+    );
 })
 
 const getUserTweets = asyncHandler(async (req, res) => {

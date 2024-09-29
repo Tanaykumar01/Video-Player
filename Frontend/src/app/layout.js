@@ -22,15 +22,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased transform scale-90 origin-top-left m-0 p-0 w-[100vw]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased transform scale-95 origin-top-left m-0 p-0 w-[100vw]`}
       >
-        <div>
-          <Navbar />
-          <div className="flex space-x-10">
-            <SideNavbar />
-            {children}
+          <div>
+            <Navbar/>
+            <div className="flex">
+              <SideNavbar />
+              {children}
+            </div>
           </div>
-        </div>
       </body>
     </html>
   );
