@@ -124,6 +124,34 @@ const getVideoById = asyncHandler(async (req, res) => {
 
 const updateVideo = asyncHandler(async (req, res) => {
     const { videoId } = req.params
+    const { title, description } = req.body
+    if(!title || !description){
+        throw new ApiError(400, "Title and description are required")
+    }
+    if (!isValidObjectId(videoId)) {
+        throw new ApiError(400, "Invalid video id")
+    }
+    const thumbnail = req.files?.thumbnail
+    if(!thumbnail){
+        throw new ApiError(400, "Thumbnail is required")
+    }
+    const thumbnailMetadata = await uploadResult(thumbnail[0]?.path);
+    const thumbnailUrl = thumbnailMetadata.secure_url; // Extract the URL
+
+    const video = await Video.findById(videoId)
+    if (!video) {
+        throw new ApiError(404, "Video not found")
+    }
+    video.title = title;
+    video.description = description;
+    video.thumbnail = thumbnailUrl;
+    await video.save();
+    res.status(200).json(
+        new ApiResponse(200,
+            video,
+            "Video updated successfully"
+        )
+    )
     //TODO: update video details like title, description, thumbnail
 
 })
