@@ -237,15 +237,15 @@ const getCurrentUser = async (req , res) => {
 }
 
 const updateAccountDetails = asyncHandler(async (req , res) => {
-    const {fullName , email} = req.body;
-    if(!fullName || !email){
+    const {fullName , username} = req.body;
+    if(!fullName || !username){
         throw new ApiError(400 , "required all fields")
     }
     const user = await User.findByIdAndUpdate(req.user?._id , 
         {
             $ser : {
                 fullName : fullName,
-                email : email
+                username : username
             }
         },
         {new : true}
@@ -442,6 +442,27 @@ const getWatchHistory = asyncHandler(async (req , res) => {
     ))
 })
 
+const getChannelById = asyncHandler(async(req,res)=>{
+    const {id} = req.params;
+    if(!id){
+        throw new ApiError(400,"Please provide channel id");
+    }
+
+    const channel = await User.findById(id).select("-password -refreshToken");
+
+    if(!channel){
+        throw new ApiError(404,"Channel does not exist");
+    }
+
+    return res.status(200).json(
+        new ApiResponse(
+            200,
+            channel,
+            "Channel is fetched successfully"
+        )
+    )
+})
+
 export { 
     registerUser, 
     loginUser, 
@@ -453,5 +474,6 @@ export {
     updateUserAvatar,
     updateUserCoverImage,
     getUserChannelProfile,
-    getWatchHistory
+    getWatchHistory,
+    getChannelById
 };
