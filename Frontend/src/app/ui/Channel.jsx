@@ -25,7 +25,7 @@ const ChannelPage = () => {
     <>
       {user && (
         <div className="channel-page h-full">
-          <div className="cover-image">
+          {user.coverImage && <div className="cover-image">
             <Image
               src={user.coverImage}
               alt="cover"
@@ -33,7 +33,7 @@ const ChannelPage = () => {
               height={400}
               className="w-full h-[25vh]"
             />
-          </div>
+          </div>}
           <div className="w-[80vw] h-[25vh] bg-[#0f0f0f] flex pl-[5vw] items-center">
             <div className="image">
               <Image
