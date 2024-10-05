@@ -24,7 +24,7 @@ export default function Login() {
     });
     const data = await response.json();
     if (data.statusCode === 200) {
-      router.push('/user/channel');
+      router.push('/');
       alert('Logged in successfully');
     } else {
       alert('Invalid credentials');
