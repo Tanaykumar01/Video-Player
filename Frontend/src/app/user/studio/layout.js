@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from "react";
 import { checkUserLogin } from "@/api/auth.js";
-import SideBar from "@/ui/customiseChannel/SideBar";
+import SideBar from "@/app/ui/customiseChannel/SideBar";
 
 const CustomiseChannel = ({ children }) => {
     const [user, setUser] = useState(null);

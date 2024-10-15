@@ -6,6 +6,7 @@ import { useState , useEffect } from "react";
 import { checkUserLogin } from "@/api/auth";
 import Image from "next/image";
 import User from "./navbar/User";
+import { LogInIcon } from "lucide-react";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -22,6 +23,11 @@ const Navbar = () => {
 
     checkLoginStatus();
   }, []);
+
+  const handleUserSetting = (userSetting) => {
+    setUserSetting(!userSetting);
+  };
+
   if (loading) {
     return <div className="text-center py-4">Loading...</div>;
   }
@@ -64,19 +70,25 @@ const Navbar = () => {
                 height={50}
                 width={50}
                 className="rounded-full w-12 h-12"
+                priority
                 onClick={() => {
                   setUserSetting(!userSetting);
                 }}
               />
               {userSetting && (
-                <div className="absolute top-[60px] w-[20vw] bg-[#383838] shadow-md rounded-lg z-50">
-                  <User />
+                <div className="absolute transform -translate-x-1/2 top-full bg-[#383838] z-50 w-[20vw] h-[90vh] max-w-xs rounded-lg shadow-lg">
+                  <User onClickDiv={handleUserSetting}/>
                 </div>
               )}
             </div>
           </div>
       ) : (
-        <div>login</div>
+        <Link href="/user/login" className="text-white">
+        <div className="flex flex-row gap-2">
+            <LogInIcon className="w-6 h-6 text-white" />
+            Login
+        </div>
+          </Link>
       )}
     </div>
   );

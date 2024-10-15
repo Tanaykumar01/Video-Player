@@ -212,6 +212,7 @@ const MainComp = ({ userInfo, setCustomiseChannel }) => {
                 width={50}
                 height={50}
                 className="relative w-[10vw] h-[15vh] rounded-[100%] left-[5vw] top-[2.5vh]"
+                priority
               />
             </div>
             <div>

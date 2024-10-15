@@ -9,7 +9,7 @@ const SideBar = ({userInfo}) => {
             <div className="">
                 <div className="avatar flex flex-col justify-center items-center mt-3 mb-3">
                     <Link href="/user/channel/home">
-                        <Image src={userInfo.avatar} alt="avatar" width={100} height={100} className="rounded-full h-[15vh] w-[9vw]"/>
+                        <Image src={userInfo.avatar} alt="avatar" width={100} height={100} className="rounded-full h-[15vh] w-[9vw]" priority/>
                     </Link>
                     <div className="mt-2">Your channel</div>
                     <span className="text-sm text-gray-600">{userInfo.fullName}</span>
@@ -23,7 +23,7 @@ const SideBar = ({userInfo}) => {
                     </Link>
                 </div>
                 <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
-                    <Link href="/user/content">
+                    <Link href="/user/studio/content">
                         <div  className="flex items-center space-x-8 text-xl">
                             <VideoIcon width={28} height={28}/>{/* Icon placeholder */}
                             <span>Content</span>
@@ -71,7 +71,7 @@ const SideBar = ({userInfo}) => {
                     </Link>
                 </div>
                 <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
-                    <Link href="/user/customisation">
+                    <Link href="/user/studio/customise">
                         <div  className="flex items-center space-x-8 text-xl">
                             <MagicWandIcon width={28} height={28}/>{/* Icon placeholder */}
                             <span>Customisation</span>

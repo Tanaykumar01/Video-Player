@@ -70,8 +70,9 @@ const ChannelHomePage = () => {
                                 <Image
                                     src={video.thumbnail}
                                     alt={video.title}
-                                    layout="fill" // Ensures the image fills the parent container
-                                    objectFit="cover" // Ensures the image doesn't get distorted
+                                    fill // Use fill to make the image fill the parent container
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Specify responsive sizes
+                                    style={{ objectFit: 'cover' }} // Use style for objectFit
                                     className="rounded-lg"
                                     priority
                                 />

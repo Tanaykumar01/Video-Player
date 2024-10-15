@@ -32,6 +32,7 @@ const ChannelPage = () => {
               width={1920}
               height={400}
               className="w-full h-[25vh]"
+              priority
             />
           </div>}
           <div className="w-[80vw] h-[25vh] bg-[#0f0f0f] flex pl-[5vw] items-center">
@@ -42,6 +43,7 @@ const ChannelPage = () => {
                 width={100}
                 height={100}
                 className="rounded-full h-[20vh] w-[12vw]"
+                priority
               />
             </div>
             <div className="w-[70vh] ml-[5vh]">
