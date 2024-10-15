@@ -15,9 +15,9 @@ const Video = ({ videos, users }) => {
               <Image
                 src={video.thumbnail}
                 alt={video.title}
-                fill // Use fill instead of layout="fill"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Define sizes for responsive behavior
-                style={{ objectFit: "cover" }} // Use style for objectFit
+                fill 
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" 
+                style={{ objectFit: "cover" }}
                 className="rounded-lg"
                 priority
               />
