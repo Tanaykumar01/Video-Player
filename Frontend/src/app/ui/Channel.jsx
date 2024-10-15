@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { checkUserLogin } from "@/app/api/auth";
+import { checkUserLogin } from "@/api/auth.js";
 const ChannelPage = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);

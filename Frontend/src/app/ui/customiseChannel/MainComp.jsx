@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import hitRequest from "@/app/api/hitReq";
+import hitRequest from "@/api/hitReq";
 import Image from "next/image";
 
 const MainComp = ({ userInfo, setCustomiseChannel }) => {

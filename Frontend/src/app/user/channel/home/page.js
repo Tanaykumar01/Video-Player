@@ -1,8 +1,8 @@
 'use client';
 import Icon from '@/Assets/channel-create-video.svg';
 import { useState, useEffect } from 'react';
-import { getAllVideos } from '@/app/api/getAllVideos';
-import { checkUserLogin } from '@/app/api/auth'; // Assuming you have this function to check login
+import { getAllVideos } from '@/api/getAllVideos.js';
+import { checkUserLogin } from '@/api/auth.js'; // Assuming you have this function to check login
 import { formatDistanceToNow } from 'date-fns';
 import Image from 'next/image'; // Import the Next.js Image component
 

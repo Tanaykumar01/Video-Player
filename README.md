@@ -229,7 +229,7 @@
 
 | File | Summary |
 | --- | --- |
-| [auth.js](https://github.com/Tanaykumar01/Video-Player/blob/main/Frontend/src/app/api/auth.js) | <code>❯ REPLACE-ME</code> |
+| [auth.js](https://github.com/Tanaykumar01/Video-Player/blob/main/Frontend/src/api/auth.js) | <code>❯ REPLACE-ME</code> |
 
 </details>
 

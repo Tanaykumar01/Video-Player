@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { checkUserLogin } from "./api/auth";
-import { getAllVideos } from "./api/getAllVideos";
-import hitRequest from "./api/hitReq";
+import { checkUserLogin } from "@/api/auth.js";
+import { getAllVideos } from "@/api/getAllVideos.js";
+import hitRequest from "@/api/hitReq";
 import Video from "./ui/video";
 
 const App = () => {

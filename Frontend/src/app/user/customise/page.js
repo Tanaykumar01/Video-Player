@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from "react";
-import { checkUserLogin } from "@/app/api/auth";
+import { checkUserLogin } from "@/api/auth.js";
 import SideBar from "@/app/ui/customiseChannel/SideBar";
 import MainComp from "@/app/ui/customiseChannel/MainComp";
 
