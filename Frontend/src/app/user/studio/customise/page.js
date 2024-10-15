@@ -1,7 +1,7 @@
 'use client';
 import { useState, useEffect } from "react";
 import { checkUserLogin } from "@/api/auth.js";
-import MainComp from "@/ui/customiseChannel/MainComp";
+import MainComp from "@/app/ui/customiseChannel/MainComp";
 
 const CustomiseChannel = ({ setCustomiseChannel }) => {
     const [user, setUser] = useState(null);
