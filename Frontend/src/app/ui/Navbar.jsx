@@ -1,12 +1,12 @@
-'use client'
+"use client";
 import Link from "next/link";
 import Search from "./Search";
-import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { useState , useEffect } from "react";
+import { BellIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { useState, useEffect } from "react";
 import { checkUserLogin } from "@/api/auth";
 import Image from "next/image";
 import User from "./navbar/User";
-import { LogInIcon } from "lucide-react";
+import { LogInIcon, LucideVideo } from "lucide-react";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);
@@ -56,39 +56,51 @@ const Navbar = () => {
 
       {/* End Section */}
       {user ? (
-          <div className="flex items-center space-x-6 relative">
-            <div className="text-white hover:text-gray-300 cursor-pointer transition-colors duration-200">
-              Create
-            </div>
-            <div className="text-white hover:text-gray-300 cursor-pointer transition-colors duration-200">
-              Notification
-            </div>
-            <div className="text-white hover:text-gray-300 cursor-pointer transition-colors duration-200 relative">
-              <Image
-                alt="user avatar"
-                src={user.avatar}
-                height={50}
-                width={50}
-                className="rounded-full w-12 h-12"
-                priority
-                onClick={() => {
-                  setUserSetting(!userSetting);
-                }}
-              />
-              {userSetting && (
-                <div className="absolute transform -translate-x-1/2 top-full bg-[#383838] z-50 w-[20vw] h-[90vh] max-w-xs rounded-lg shadow-lg">
-                  <User onClickDiv={handleUserSetting}/>
-                </div>
-              )}
-            </div>
+        <div className="flex items-center space-x-6 relative">
+          <div className="relative group">
+            <Link href="/user/studio/content">
+              <div className="text-white hover:text-gray-300 hover:bg-[#383838] p-2 rounded-full cursor-pointer transition-colors duration-200">
+                <LucideVideo className="w-6 h-6" />
+              </div>
+              <span className="absolute mt-2 right-0.5 hidden group-hover:block bg-[#383838] text-white text-sm p-2 rounded-md z-50">
+                Create
+              </span>
+            </Link>
           </div>
+          <div className="relative group">
+            <div className="text-white hover:text-gray-300 hover:bg-[#383838] p-2 rounded-full cursor-pointer transition-colors duration-200">
+              <BellIcon className="w-6 h-6" />
+            </div>
+            <span className="absolute mt-2 right-0.5 hidden group-hover:block bg-[#383838] text-white text-sm p-2 rounded-md z-50">
+              Notifications
+            </span>
+          </div>
+          <div className="text-white hover:text-gray-300 cursor-pointer transition-colors duration-200 relative">
+            <Image
+              alt="user avatar"
+              src={user.avatar}
+              height={50}
+              width={50}
+              className="rounded-full w-12 h-12"
+              priority
+              onClick={() => {
+                setUserSetting(!userSetting);
+              }}
+            />
+            {userSetting && (
+              <div className="absolute transform -translate-x-1/2 top-full bg-[#383838] z-50 w-[20vw] h-[90vh] max-w-xs rounded-lg shadow-lg">
+                <User onClickDiv={handleUserSetting} />
+              </div>
+            )}
+          </div>
+        </div>
       ) : (
         <Link href="/user/login" className="text-white">
-        <div className="flex flex-row gap-2">
+          <div className="flex flex-row gap-2">
             <LogInIcon className="w-6 h-6 text-white" />
             Login
-        </div>
-          </Link>
+          </div>
+        </Link>
       )}
     </div>
   );
