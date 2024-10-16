@@ -31,7 +31,7 @@ const ChannelPage = () => {
               alt="cover"
               width={1920}
               height={400}
-              className="w-full h-[25vh]"
+              className="w-full h-[25vh] rounded-xl ml-3"
               priority
             />
           </div>}
