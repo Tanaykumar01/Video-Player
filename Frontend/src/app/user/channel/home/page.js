@@ -88,7 +88,7 @@ const ChannelHomePage = () => {
                                             alt="Logo"
                                             width={32}
                                             height={32}
-                                            className="rounded-full"
+                                            className="rounded-t-full"
                                             loading="lazy"
                                         />
                                     )}

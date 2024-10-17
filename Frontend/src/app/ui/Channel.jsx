@@ -3,9 +3,28 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { checkUserLogin } from "@/api/auth.js";
+import hitRequest from "@/api/hitReq";
 const ChannelPage = () => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [userChannel, setUserChannel] = useState(null);
+  const [loadingUser, setLoadingUser] = useState(true);
+
+    useEffect(() => {
+        const fetchUserChannel = async () => {
+            try {
+              if(user?.username) {
+                const res = await hitRequest(`/users/channel/${user?.username}`, "GET");
+                setLoadingUser(false);
+                setUserChannel(res?.data);
+              }
+            }
+            catch (err) {
+                console.error(err);
+            }
+        }
+        fetchUserChannel();
+    }, [user?.username]);
 
   useEffect(() => {
     const checkLoginStatus = async () => {
@@ -18,7 +37,8 @@ const ChannelPage = () => {
     checkLoginStatus();
   }, []);
 
-  if (loading) {
+
+  if (loading || loadingUser) {
     return <div>Loading...</div>;
   }
   return (
@@ -50,7 +70,7 @@ const ChannelPage = () => {
               <div className="font-bold text-3xl">{user.fullName}</div>
               <div className="flex space-x-2">
                 <div className="text-gray-400">@{user.username}</div>
-                <div className="text-gray-400">Subscribers</div>
+                <div className="text-gray-400">{ userChannel?.subscribersCount } Subscribers</div>
               </div>
               <div>
                 more about this channel....

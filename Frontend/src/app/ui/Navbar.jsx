@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Search from "./Search";
-import { BellIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { BellIcon, HamburgerMenuIcon, ViewGridIcon } from "@radix-ui/react-icons";
 import { useState, useEffect } from "react";
 import { checkUserLogin } from "@/api/auth";
 import Image from "next/image";
@@ -41,7 +41,7 @@ const Navbar = () => {
         </button>
         <div className="flex items-center space-x-3">
           <Link href="/" className="text-white">
-            Icon
+            <ViewGridIcon className="w-6 h-6" />
           </Link>
           <Link href="/" className="text-xl font-bold text-white">
             Streami
