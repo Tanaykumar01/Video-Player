@@ -131,7 +131,7 @@ const MainComp = ({ userInfo, setCustomiseChannel }) => {
     }
   };
   return (
-    <div className="relative h-screen overflow-y-scroll">
+    <div className="relative h-screen overflow-y-scroll scrollbar-none">
       <h1 className="m-8 text-xl font-bold">Channel customisation</h1>
       <div className="ml-8 nav flex items-center justify-between w-[80vw]">
         <div className="flex space-x-8">

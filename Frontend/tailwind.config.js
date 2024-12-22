@@ -54,8 +54,16 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		scrollbar: {
+			DEFAULT: 'hidden', // Hide default scrollbar
+		},
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  variants: {
+	extend: {
+		scrollbar: ['rounded'],
+	},
+  },
+  plugins: [require("tailwindcss-animate") , require('tailwind-scrollbar'),],
 };

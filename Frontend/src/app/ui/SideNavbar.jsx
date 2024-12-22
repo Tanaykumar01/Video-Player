@@ -2,7 +2,7 @@ import Link from "next/link";
 const SideNavbar = () => {
   return (
     <div
-      className={`side-navbar ml-5 w-[15vw] h-[90vh] bg-[#0f0f0f] text-white text-[17px] font-bold overflow-y-scroll`}
+      className={`side-navbar ml-5 w-[15vw] h-[90vh] bg-[#0f0f0f] text-white text-[17px] font-bold overflow-y-scroll scrollbar-none`}
     >
       {/* Section 1: Main Navigation */}
       <div className="pt-4">

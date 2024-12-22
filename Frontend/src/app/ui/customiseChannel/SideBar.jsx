@@ -3,7 +3,6 @@ import Link from "next/link";
 import { BarChartIcon, CommitIcon, DashboardIcon, MagicWandIcon, VideoIcon } from "@radix-ui/react-icons";
 import { CopyrightIcon, DollarSignIcon, Music3Icon, SubtitlesIcon } from "lucide-react";
 const SideBar = ({userInfo}) => {
-    console.log(userInfo);
     return ( 
         <div className="side-navbar ml-5 w-[20vw] h-[90vh] bg-[#0f0f0f] text-white text-[17px] border-r-[0.5px] border-r-[#383838] sticky">
             <div className="">
@@ -15,7 +14,7 @@ const SideBar = ({userInfo}) => {
                     <span className="text-sm text-gray-600">{userInfo.fullName}</span>
                 </div>
                 <div className="py-3 px-4 hover:bg-[#383838] hover:rounded-2xl cursor-pointer">
-                    <Link href="/user/dashboard">
+                    <Link href="/user/studio/dashboard">
                         <div  className="flex items-center space-x-8 text-xl">
                             <DashboardIcon width={28} height={28}/>{/* Icon placeholder */}
                             <span>Dashboard</span>

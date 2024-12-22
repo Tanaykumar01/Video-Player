@@ -1,8 +1,8 @@
 'use client'
 import Icon from '@/Assets/channel-create-video.svg';
-import { UploadIcon } from '@radix-ui/react-icons';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { getAllVideos } from '@/api/getAllVideos.js';
+import UploadVideo from '@/app/ui/video/uploadVideo/UploadVideo';
 const Page = () => {
     const [uploadVideos, setUploadVideos] = useState(false);
     const [videos, setVideos] = useState([]);
@@ -13,14 +13,6 @@ const Page = () => {
         };
         fetchVideos();
     }, []);
-    const fileInputRef = useRef(null);
-    const handleButtonClick = () => {
-        fileInputRef.current.click();
-    }
-    const handleVideoUpload = (e) => {
-        const file = e.target.files[0];
-        console.log(file);
-    }
     
     return (
         <div>
@@ -98,42 +90,8 @@ const Page = () => {
                 </div>
                 <button className="w-[15%] bg-[#383838] text-white px-4 py-2 rounded-xl" onClick={() => setUploadVideos(true)}>Upload video</button>
                 {uploadVideos && (
-                    <div className='h-[90vh] w-[60vw] bg-[#383838] mt-[-47%] rounded-2xl'>
-                        <div className="flex justify-between items-center">
-                            <div className="text-white text-lg ml-8 mt-8">Upload video</div>
-                            <div className="text-white text-lg mr-8 mt-8 cursor-pointer" onClick={() => setUploadVideos(false)}>X</div>
-                        </div>
-                        {/* Divider */}
-                        <div className="w-[60vw] h-[1px] bg-[#0f0f0f] my-2" />
-                        <div className="flex justify-center items-center mt-[15vh]">
-                            <div className="w-[15vw] h-[26vh] bg-[#0f0f0f] rounded-full flex justify-center items-center text-center" onClick={handleButtonClick}>
-                                <input
-                                    type="file"
-                                    ref={fileInputRef}
-                                    onChange={handleVideoUpload}
-                                    style={{ display: "none" }} // Hide the file input
-                                />
-                                <UploadIcon height={40} width={40} />
-                            </div>
-                        </div>
-                        <div className='flex flex-col justify-center items-center mt-3'>
-                            Drag and drop video files to upload
-                            <span>Your videos will be private until you publish them.</span>
-                        </div>
-                        <div className="flex justify-center items-center mt-8">
-                            <button
-                                className="bg-[#0f0f0f] py-2 px-4 rounded-full"
-                                onClick={handleButtonClick}
-                            >
-                                <input
-                                    type="file"
-                                    ref={fileInputRef}
-                                    onChange={handleVideoUpload}
-                                    style={{ display: "none" }} // Hide the file input
-                                />
-                                Upload
-                            </button>
-                        </div>
+                    <div className='flex justify-center mt-[-47%]'>
+                        <UploadVideo setUploadVideos={setUploadVideos}/>
                     </div>
                 )}
             </div>

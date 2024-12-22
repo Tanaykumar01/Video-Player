@@ -44,7 +44,7 @@ const Navbar = () => {
             <ViewGridIcon className="w-6 h-6" />
           </Link>
           <Link href="/" className="text-xl font-bold text-white">
-            Streami
+            Streamline
           </Link>
         </div>
       </div>
